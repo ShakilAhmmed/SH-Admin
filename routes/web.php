@@ -14,3 +14,12 @@
 Route::get('/', function () {
     return view('sh-admin.sh_admin_welcome');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

@@ -1,0 +1,18 @@
+{
+    "name": "cb/shadmin",
+    "description": "Simply hosted dashboard , Its Develop Laravel and Vue Js , Now development More easy",
+    "authors": [
+        {
+            "name": "Rahib Hasan",
+            "email": "rahibhasan689009@gmail.com"
+        },
+        {
+            "name": "Shakil Ahmmed",
+            "email": "shakilfci461@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "laravel/ui":"--dev"
+    }
+}
