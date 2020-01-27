@@ -33,7 +33,7 @@ class ShAdminServiceProvider extends ServiceProvider
 
         //assets publish
         $this->publishes([
-            __DIR__.'/Installs/resources/views' => public_path('sh-admin-assets'),
+            __DIR__.'/Installs/sh-assets' => public_path('sh-admin-assets'),
         ], 'public');
 
         //SHAdmin Command Publish
