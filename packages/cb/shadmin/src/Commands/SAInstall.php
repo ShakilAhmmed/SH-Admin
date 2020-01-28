@@ -66,6 +66,11 @@ class SAInstall extends Command
             $filename = base_path('.env');
 
             // UserName
+            $database_name = $this->ask('What Is Your Database Name  ?');
+            $env_db_name = 'DB_DATABASE='; 
+            $replace_db_name = 'DB_DATABASE='.$database_name;
+
+            // UserName
             $username = $this->ask('What Is Your Username  ?');
             $env_db_user_name = 'DB_USERNAME='; 
             $replace_user_name = 'DB_USERNAME='.$username;
@@ -74,9 +79,13 @@ class SAInstall extends Command
             $password = $this->secret('What is the password ?');
             $env_db_password = 'DB_PASSWORD='; // the content after which you want to insert new stuff
             $replace_password = 'DB_PASSWORD='.$password;
+
             if (File::exists(base_path('.env'))) 
             {
-                // UserName
+                // DatabaseName
+                file_put_contents($filename, str_replace($env_db_name, $replace_db_name, file_get_contents($filename)));
+
+                //UserName
                 file_put_contents($filename, str_replace($env_db_user_name, $replace_user_name, file_get_contents($filename)));
 
                 // Password
@@ -85,6 +94,9 @@ class SAInstall extends Command
             else
             {
                 File::move($from . "/.env", $to . '/.env'); 
+                // DatabaseName
+                file_put_contents($filename, str_replace($env_db_name, $replace_db_name, file_get_contents($filename)));
+
                 // UserName
                 file_put_contents($filename, str_replace($env_db_user_name, $replace_user_name, file_get_contents($filename)));
 
