@@ -50,6 +50,7 @@ class SAInstall extends Command
 
         $this->_echo('SH Admin installation started...');
         $this->call('cache:clear');
+        $this->CheckRoute();
         $this->call('ui:auth');
         exec('npm install');
         exec('npm run production');
@@ -73,6 +74,7 @@ class SAInstall extends Command
         //SH Authenticate Resource Publish
         $this->_echo('Generating Authenticate Resource Publish...');
         $this->replaceFfile($from . "/resources/views/login.blade.php", $to . "/resources/views/auth/login.blade.php");
+        $this->replaceFfile($from . "/resources/views/login.blade.php", $to . "/resources/views/auth/login.blade.php");
     }
 
     private function EnvironMent($env)
@@ -81,13 +83,26 @@ class SAInstall extends Command
         $this->database_name=$this->ask('What is your DATABASE NAME?\n');
         $this->database_user_name=$this->ask('What is your DATABASE USER NAME?\n');
         $this->database_password=$this->secret('What is the DATABASE PASSWORD?\n');
-        file_put_contents($env, str_replace("DB_DATABASE=laravel","DB_DATABASE=".$this->database_name, file_get_contents($env)));
-        file_put_contents($env, str_replace("DB_USERNAME=root","DB_USERNAME=".$this->database_user_name, file_get_contents($env)));
-        file_put_contents($env, str_replace("DB_PASSWORD=","DB_PASSWORD=".$this->database_password, file_get_contents($env)));
+        $environment_database=$_ENV['DB_DATABASE'];
+        $environment_username=$_ENV['DB_USERNAME'];
+        $environment_password=$_ENV['DB_PASSWORD'];
+        file_put_contents($env, str_replace("DB_DATABASE=$environment_database","DB_DATABASE=".$this->database_name, file_get_contents($env)));
+        file_put_contents($env, str_replace("DB_USERNAME=$environment_username","DB_USERNAME=".$this->database_user_name, file_get_contents($env)));
+        file_put_contents($env, str_replace("DB_PASSWORD=$environment_password","DB_PASSWORD=".$this->database_password, file_get_contents($env)));
         $this->_echo("Successfully Setup Your Environment Varriable");
 
     }
 
+
+    private function CheckRoute()
+    {
+        $route_file_path=base_path()."/routes/web.php";
+        if(File::exists($route_file_path))
+        {
+          File::delete($route_file_path);
+          file_put_contents($route_file_path,"<?php");
+        }
+    }
 
 
     public function replaceFfile($src,$dst)
