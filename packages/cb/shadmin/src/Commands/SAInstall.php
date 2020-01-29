@@ -36,8 +36,6 @@ class SAInstall extends Command
      * @return mixed
      */
 
-
-    
     public function handle()
     {
         //copy paste destination
