@@ -73,7 +73,9 @@ class SAInstall extends Command
         //SH Authenticate Resource Publish
         $this->_echo('Generating Authenticate Resource Publish...');
         $this->replaceFfile($from . "/resources/views/login.blade.php", $to . "/resources/views/auth/login.blade.php");
-        $this->replaceFfile($from . "/resources/views/login.blade.php", $to . "/resources/views/auth/login.blade.php");
+        $this->copy_paste($from . "/resources/views/sh-admin-layout", $to . "/resources/views/layouts");
+        $this->replaceFfile($from . "/resources/views/app.blade.php", $to . "/resources/views/layouts/app.blade.php");
+
     }
 
     private function EnvironMent($env)

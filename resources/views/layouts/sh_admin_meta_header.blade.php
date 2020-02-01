@@ -5,7 +5,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>SH-ADMIN</title>
-	 @include('sh-admin-partials.sh_admin_css')
+	 @include('layouts.sh_admin_css')
 </head>
 
 <body>
