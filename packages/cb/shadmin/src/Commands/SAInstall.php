@@ -54,21 +54,25 @@ class SAInstall extends Command
         exec('npm install');
         exec('npm run production');
         //Check .env exists or not
-        $env_file=base_path(".env");
-        if(File::exists($env_file))
+        $confirmation=$this->ask('Are You Sure To Configure EnvironMent ? y/n ');
+        if(strtolower($confirmation)=='y')
         {
-           $this->_echo("File Get");
-           $this->EnvironMent($env_file);
-        }
-        else
-        {
-          $env_example=base_path(".env.example");
-          if(File::exists($env_example))
-          {
-               exec("cp .env.example .env");
-               $this->call("key:generate");
+            $env_file=base_path(".env");
+            if(File::exists($env_file))
+            {
+               $this->_echo("File Get");
                $this->EnvironMent($env_file);
-          }
+            }
+            else
+            {
+              $env_example=base_path(".env.example");
+              if(File::exists($env_example))
+              {
+                   exec("cp .env.example .env");
+                   $this->call("key:generate");
+                   $this->EnvironMent($env_file);
+              }
+            }
         }
         //SH Authenticate Resource Publish
         $this->_echo('Generating Authenticate Resource Publish...');
