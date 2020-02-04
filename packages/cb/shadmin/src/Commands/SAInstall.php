@@ -52,6 +52,7 @@ class SAInstall extends Command
         $this->CheckRoute();
         $this->call('ui:auth');
         exec('npm install');
+        exec('npm install vue-router');
         exec('npm run production');
         //Check .env exists or not
         $confirmation=$this->ask('Are You Sure To Configure EnvironMent ? y/n ');

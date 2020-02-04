@@ -3,6 +3,6 @@
 @include('layouts.sh_admin_sidebar')
 @include('layouts.sh_admin_page_header')
 @include('layouts.sh_admin_breadcrumb')
-	<h1 class="text-center text-danger">Router View  Will Apeared Here </h1>
+<router-view></router-view>
 @include('layouts.sh_admin_js')
 @include('layouts.sh_admin_footer')

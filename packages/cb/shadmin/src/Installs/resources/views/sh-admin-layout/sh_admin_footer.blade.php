@@ -10,6 +10,7 @@
 		<!-- /page content -->
 	</div>
 	<!-- /page container -->
+	</div>
 </body>
 </html>
 

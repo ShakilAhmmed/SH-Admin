@@ -36,6 +36,7 @@
 										<!-- Main -->
 										<li class="navigation-header"><span>Main</span> <i class="icon-menu" title="Main pages"></i></li>
 										<li class="active"><a href="index.html"><i class="icon-home4"></i> <span>Dashboard</span></a></li>
+										<li><router-link  to='/test'><i class="icon-home4"></i> <span>TEST</span></router-link></li>
 										<!-- <li>
 											<a href="#"><i class="icon-stack2"></i> <span>Page layouts</span></a>
 											<ul>
@@ -90,3 +91,4 @@
 
 						</div>
 					</div>
+
