@@ -36,6 +36,11 @@ class ShAdminServiceProvider extends ServiceProvider
             __DIR__.'/Installs/sh-assets' => public_path('sh-admin-assets'),
         ], 'public');
 
+        //Migration Publish
+         $this->loadMigrationsFrom(__DIR__.'/database/migrations');
+         // $this->publishes([
+         //      __DIR__.'/database/migrations/' => database_path('migrations'),
+         // ]);
         //SHAdmin Command Publish
         if ($this->app->runningInConsole()) {
             $this->commands([

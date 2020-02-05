@@ -79,6 +79,8 @@ class SAInstall extends Command
         $this->_echo('Generating Authenticate Resource Publish...');
         $this->replaceFfile($from . "/resources/views/login.blade.php", $to . "/resources/views/auth/login.blade.php");
         $this->replaceFfile($from . "/resources/views/login.blade.php", $to . "/resources/views/auth/login.blade.php");
+        $this->CallMigrate();
+
     }
 
     private function EnvironMent($env)
@@ -95,6 +97,17 @@ class SAInstall extends Command
         file_put_contents($env, str_replace("DB_PASSWORD=$environment_password","DB_PASSWORD=".$this->database_password, file_get_contents($env)));
         $this->_echo("Successfully Setup Your Environment Varriable");
 
+    }
+
+    private function CallMigrate()
+    {
+        try{
+            $this->call('migrate');
+        }
+        catch(\PDOException $e)
+        {
+          $this->_echo("Please Create Database Then Rerun Installation");
+        }
     }
 
 
