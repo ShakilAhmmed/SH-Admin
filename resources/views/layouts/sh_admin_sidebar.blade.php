@@ -37,7 +37,7 @@
 										<li class="navigation-header"><span>Main</span> <i class="icon-menu" title="Main pages"></i></li>
 										<li class="active"><a href="index.html"><i class="icon-home4"></i> <span>Dashboard</span></a></li>
 										<li><router-link  to='/test'><i class="icon-home4"></i> <span>TEST</span></router-link></li>
-										<!-- <li>
+										<li>
 											<a href="#"><i class="icon-stack2"></i> <span>Page layouts</span></a>
 											<ul>
 												<li><a href="layout_navbar_fixed.html">Fixed navbar</a></li>
@@ -51,9 +51,9 @@
 												<li><a href="boxed_mini.html">Boxed with mini sidebar</a></li>
 												<li><a href="boxed_full.html">Boxed full width</a></li>
 											</ul>
-										</li> -->
+										</li>
 
-										
+
 										<!-- /main -->
 
 										<!-- Forms -->
@@ -81,8 +81,8 @@
 												<li><a href="form_inputs_grid.html">Inputs grid</a></li>
 											</ul>
 										</li> -->
-										
-										
+
+
 										<!-- /forms -->
 									</ul>
 								</div>
@@ -91,4 +91,3 @@
 
 						</div>
 					</div>
-
