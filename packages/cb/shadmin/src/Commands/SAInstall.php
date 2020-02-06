@@ -78,8 +78,10 @@ class SAInstall extends Command
         //SH Authenticate Resource Publish
         $this->_echo('Generating Authenticate Resource Publish...');
         $this->replaceFfile($from . "/resources/views/login.blade.php", $to . "/resources/views/auth/login.blade.php");
+        $this->copy_paste(base_path('packages/cb/shadmin/src') . "/database/seeds", $to . "/database/seeds");
+        $this->copy_paste(base_path('packages/cb/shadmin/src') . "/database/factories", $to . "/database/factories");
         $this->replaceFfile($from . "/resources/views/login.blade.php", $to . "/resources/views/auth/login.blade.php");
-        $this->CallMigrate();
+        //$this->CallMigrate();
 
     }
 
@@ -103,10 +105,12 @@ class SAInstall extends Command
     {
         try{
             $this->call('migrate');
+            $this->call('db:seed --class=SetupSeeder');
+            //php artisan db:seed --class=cb\shadmin\database\seeds\SetupSeeder
         }
         catch(\PDOException $e)
         {
-          $this->_echo("Please Create Database Then Rerun Installation");
+          $this->_echo($e);
         }
     }
 
