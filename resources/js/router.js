@@ -1,10 +1,10 @@
 import DashboardComponent from './components/ExampleComponent.vue'
-import testC from './components/testC.vue'
+import Module from './components/Module.vue'
 export const routes=[
 	
 	{
-		path:"/test",
-		component:testC,
+		path:"/module",
+		component:Module,
 		name:"dashboard",
 		meta:{
 			title:"Dashboard"

@@ -4,5 +4,5 @@
 @include('layouts.sh_admin_page_header')
 @include('layouts.sh_admin_breadcrumb')
 <router-view></router-view>
-@include('layouts.sh_admin_js')
 @include('layouts.sh_admin_footer')
+@include('layouts.sh_admin_js')
