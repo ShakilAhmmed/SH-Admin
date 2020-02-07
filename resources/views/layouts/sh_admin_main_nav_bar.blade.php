@@ -18,7 +18,7 @@
 						<span class="visible-xs-inline-block position-right">Git updates</span>
 						<span class="badge bg-warning-400">9</span>
 					</a>
-					
+
 					<div class="dropdown-menu dropdown-content">
 						<div class="dropdown-content-heading">
 							Git updates
@@ -43,7 +43,7 @@
 								<div class="media-left">
 									<a href="#" class="btn border-warning text-warning btn-flat btn-rounded btn-icon btn-sm"><i class="icon-git-commit"></i></a>
 								</div>
-								
+
 								<div class="media-body">
 									Add full font overrides for popovers and tooltips
 									<div class="media-annotation">36 minutes ago</div>
@@ -54,7 +54,7 @@
 								<div class="media-left">
 									<a href="#" class="btn border-info text-info btn-flat btn-rounded btn-icon btn-sm"><i class="icon-git-branch"></i></a>
 								</div>
-								
+
 								<div class="media-body">
 									<a href="#">Chris Arney</a> created a new <span class="text-semibold">Design</span> branch
 									<div class="media-annotation">2 hours ago</div>
@@ -65,7 +65,7 @@
 								<div class="media-left">
 									<a href="#" class="btn border-success text-success btn-flat btn-rounded btn-icon btn-sm"><i class="icon-git-merge"></i></a>
 								</div>
-								
+
 								<div class="media-body">
 									<a href="#">Eugene Kopyov</a> merged <span class="text-semibold">Master</span> and <span class="text-semibold">Dev</span> branches
 									<div class="media-annotation">Dec 18, 18:36</div>
@@ -76,7 +76,7 @@
 								<div class="media-left">
 									<a href="#" class="btn border-primary text-primary btn-flat btn-rounded btn-icon btn-sm"><i class="icon-git-pull-request"></i></a>
 								</div>
-								
+
 								<div class="media-body">
 									Have Carousel ignore keyboard events
 									<div class="media-annotation">Dec 12, 05:46</div>
@@ -94,9 +94,7 @@
 			<p class="navbar-text"><span class="label bg-success-400">Online</span></p>
 
 			<ul class="nav navbar-nav navbar-right">
-				
 
-				
 				<li class="dropdown dropdown-user">
 					<a class="dropdown-toggle" data-toggle="dropdown">
 						<img src="assets/images/placeholder.jpg" alt="">
@@ -106,15 +104,19 @@
 
 					<ul class="dropdown-menu dropdown-menu-right">
 						<li><a href="#"><i class="icon-user-plus"></i> My profile</a></li>
+						<li><a href="#"><i class="icon-coins"></i> My balance</a></li>
+						<li><a href="#"><span class="badge bg-teal-400 pull-right">58</span> <i class="icon-comment-discussion"></i> Messages</a></li>
 						<li class="divider"></li>
 						<li><a href="#"><i class="icon-cog5"></i> Account settings</a></li>
-						<li><a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="icon-switch2"></i> Logout</a></li>
-
-						<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                            @csrf
-                        </form>
+						<li><a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="icon-switch2"></i> Logout</a>
+							<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+															@csrf
+													</form>
+						</li>
 					</ul>
 				</li>
+
+
 			</ul>
 		</div>
 	</div>

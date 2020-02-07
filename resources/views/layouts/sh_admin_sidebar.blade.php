@@ -38,14 +38,16 @@
 										<li class="active"><a href="index.html"><i class="icon-home4"></i> <span>Dashboard</span></a></li>
 										<li><router-link  to='/test'><i class="icon-home4"></i> <span>TEST</span></router-link></li>
 										<li>
-											<a href="#"><i class="icon-stack2"></i> <span>Developer</span></a>
+
+											<a href="#"><i class="icon-stack2"></i> <span>Page layouts</span></a>
+
 											<ul>
 												<li><router-link to="/module">Module</router-link></li>
 												
 											</ul>
 										</li>
 
-										
+
 										<!-- /main -->
 
 										<!-- Forms -->
@@ -73,8 +75,8 @@
 												<li><a href="form_inputs_grid.html">Inputs grid</a></li>
 											</ul>
 										</li> -->
-										
-										
+
+
 										<!-- /forms -->
 									</ul>
 								</div>
@@ -83,4 +85,3 @@
 
 						</div>
 					</div>
-
