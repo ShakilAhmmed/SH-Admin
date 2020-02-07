@@ -14,3 +14,8 @@
 	<script type="text/javascript" src="{{asset('sh-admin-assets/assets/js/pages/dashboard.js')}}"></script>
 	<script  type="text/javascript" src="{{asset('/js/app.js')}}"></script>
 
+
+	<!-- for datatables -->
+	<script type="text/javascript" src="{{asset('sh-admin-assets/assets/js/plugins/tables/datatables/datatables.min.js')}}"></script>
+	<script type="text/javascript" src="{{asset('sh-admin-assets/assets/js/plugins/forms/selects/select2.min.js')}}"></script>
+	<script type="text/javascript" src="{{asset('sh-admin-assets/assets/js/pages/datatables_advanced.js')}}"></script>

@@ -1,4 +1,4 @@
-import DashboardComponent from './components/ExampleComponent.vue'
+import system_configuration from './components/system_configuration.vue'
 import Module from './components/Module.vue'
 export const routes=[
 	
@@ -7,15 +7,18 @@ export const routes=[
 		component:Module,
 		name:"dashboard",
 		meta:{
-			title:"Dashboard"
+			breadcumb:"Module",
+			title:'Module'
 		}
 	},
+	
 	{
-		path:"/",
-		component:DashboardComponent,
+		path:"/system_configuration",
+		component:system_configuration,
 		name:"defaultview",
 		meta:{
-			title:"Dashboard"
+			breadcumb:"System Configuration",
+			title:'System Configuration'
 		}
 	}
 
