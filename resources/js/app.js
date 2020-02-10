@@ -3,16 +3,11 @@ require('./bootstrap');
 //Modeule Import
 window.Vue = require('vue');
 import VueRouter from 'vue-router'
+import axios from 'axios'
 import {routes} from './router.js'
 import VueLoading from 'vuejs-loading-plugin'
-import loding from './components/loding'
+import lodingC from './components/loding'
 //Module Import
-
-//vue component 
-Vue.component("breadcrumb",require('./components/BreadCumbComponent').default);
-
-//vue component
-
 
 
 //Module Use
@@ -27,6 +22,17 @@ const router = new VueRouter({
 
 
 
+//vue component 
+Vue.component("breadcrumb",require('./components/BreadCumbComponent').default);
+
+//vue component
+
+
+
+
+
+
+
 
 // overwrite program
 
@@ -36,9 +42,9 @@ const router = new VueRouter({
 	  dark: true, // default false
 	  text: 'Ladataan', // default 'Loading'
 	  loading: true, // default false
-	  customLoader: loding, // replaces the spinner and text with your own
+	  customLoader: lodingC, // replaces the spinner and text with your own
 	  background: 'rgb(255,255,255)', // set custom background
-	  classes: ['myclass'] // array, object or string
+	  classes: 'spinner-border'// array, object or string
 });
 
 
